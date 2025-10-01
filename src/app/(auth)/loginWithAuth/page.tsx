@@ -13,8 +13,8 @@ const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "500"] });
 
 export default function OtpPage() {
   return (
-    <div className="flex justify-center items-center h-screen-[90vh] px-4">
-      <Card className="absolute top-[10%] w-full max-w-[537px] h-auto p-5 gap-2 border-[#BFBFBF] rounded-[10px] bg-white shadow-bottom-left sm:p-6 md:p-8 mt-40">
+    <div className="flex items-center justify-center h-screen-[90vh] ">
+      <Card className=" absolute top-[250px] w-full max-w-[537px] h-auto p-5 gap-2 border-[#BFBFBF] rounded-[10px] bg-white shadow-bottom-left sm:p-6 md:p-8">
         <CardHeader className="items-center justify-center mt-[20px] mb-[20px]">
           <CardTitle
             className={`${montserrat.className} font-medium text-[32px] leading-[100%]  tracking-[0%] text-center`}
