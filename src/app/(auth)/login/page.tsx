@@ -11,6 +11,7 @@ import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import Image from "next/image";
 import { Montserrat } from "next/font/google";
+import Link from "next/link";
 
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "500"] });
 
@@ -76,12 +77,12 @@ export default function LoginPage() {
                   </label>
                 </div>
 
-                <a
-                  href="#"
+                <Link
+                  href="/otp"
                   className={`${montserrat.className} font-bold text-[12px] leading-[100%] tracking-[0%] underline-offset-4 hover:underline`}
                 >
                   Forgot Password?
-                </a>
+                </Link>
               </div>
             </div>
           </form>
