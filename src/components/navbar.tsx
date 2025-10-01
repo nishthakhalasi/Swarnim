@@ -14,7 +14,6 @@ export default function Navbar() {
     <nav
       className={`w-full h-[50px] bg-white shadow-md flex items-center justify-between px-5 ${montserrat.className}`}
     >
-      {/* Logo with BETA label */}
       <div className="relative flex items-center">
         <Image
           src="/Logo.png"
@@ -30,7 +29,6 @@ export default function Navbar() {
         </label>
       </div>
 
-      {/* Help button */}
       <div className="flex w-[70px] h-[30px] items-center gap-2 border border-gray-300 rounded-[2px] px-2 py-[2px] cursor-pointer hover:border-[#E0935A]">
         <Image
           src="/Vector.png"
