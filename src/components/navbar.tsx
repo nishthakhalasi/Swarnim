@@ -33,7 +33,7 @@ export default function Navbar() {
       {/* Help button */}
       <div className="flex w-[70px] h-[30px] items-center gap-2 border border-gray-300 rounded-[2px] px-2 py-[2px] cursor-pointer hover:border-[#E0935A]">
         <Image
-          src="/vector.png"
+          src="/Vector.png"
           width={20}
           height={20}
           quality={100}
