@@ -40,7 +40,7 @@ export default function LoginPage() {
                   type="email"
                   placeholder="User Name / Email ID"
                   required
-                  className={` ${montserrat.className} w-full sm:w-[457px] h-[48.08px] px-[18px] py-[14px] gap-[10px]  font-normal text-[16px] leading-[100%] tracking-[0%] border border-[#BFBFBF] rounded-[2px] opacity-100 `}
+                  className={` ${montserrat.className} w-full sm:w-[457px] h-[48.08px] px-[18px] py-[14px] gap-[10px]  font-normal text-[24px] leading-[100%] tracking-[0%] border border-[#BFBFBF] rounded-[2px] opacity-100 `}
                 />
               </div>
 
@@ -50,7 +50,7 @@ export default function LoginPage() {
                   type="password"
                   placeholder="Password"
                   required
-                  className={` ${montserrat.className} w-full h-[48.08px] px-[18px] py-[14px] pr-10 font-normal text-[16px] leading-[100%] tracking-[0%] border border-[#BFBFBF] rounded-[2px] opacity-100`}
+                  className={`${montserrat.className} w-full h-[52px] px-[18px] py-[14px] pr-10 font-normal text-[22px] sm:text-[24px] leading-[120%] border border-[#BFBFBF] rounded-[4px]`}
                 />
 
                 <Image
