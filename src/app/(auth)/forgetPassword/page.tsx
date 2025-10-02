@@ -44,7 +44,7 @@ export default function LoginPage() {
                 />
               </div>
             </div>
-            <Button className="w-full sm:w-[457px] h-[50px] p-[15px] rounded-[2px] bg-[#E0935A] border-none text-amber-50 font-bold text-[16px] uppercase mb-5">
+            <Button className="w-full sm:w-[457px] h-[50px] p-[15px] rounded-[2px] bg-gold border-none text-amber-50 font-bold text-[16px] uppercase mb-5">
               Send Reset Code
             </Button>
 
@@ -53,7 +53,7 @@ export default function LoginPage() {
             >
               Back to?
             </span>
-            <Link href="/login" className="text-[#E0935A] font-semibold">
+            <Link href="/login" className="text-gold font-semibold">
               Login
             </Link>
           </form>

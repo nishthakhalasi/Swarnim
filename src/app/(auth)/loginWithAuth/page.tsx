@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -8,10 +10,13 @@ import {
 } from "@/components/ui/card";
 import { Montserrat } from "next/font/google";
 import Link from "next/link";
+import { useState } from "react";
+import OTPInput from "react-otp-input";
 
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "500"] });
 
 export default function OtpPage() {
+  const [otp, setOtp] = useState("");
   return (
     <div className="flex items-center justify-center min-h-[90vh] px-4 ">
       <Card className="w-full max-w-[537px] h-auto p-5 gap-6 border border-[#BFBFBF] rounded-[10px] bg-white shadow-bottom-left sm:p-6 md:p-8">
@@ -30,15 +35,19 @@ export default function OtpPage() {
         </CardHeader>
         <CardContent className="flex justify-center items-center">
           <form className="flex flex-col gap-6 items-center">
-            <div className="flex gap-3">
-              {Array.from({ length: 6 }).map((_, i) => (
-                <input
-                  key={i}
-                  type="text"
-                  maxLength={1}
-                  className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] border border-[#BFBFBF] rounded-md text-center text-lg outline-none focus:border-[#E0935A]"
-                />
-              ))}
+            <div className="flex justify-center gap-2 w-full max-w-[500px]">
+              <OTPInput
+                value={otp}
+                onChange={setOtp}
+                numInputs={6}
+                renderSeparator={<span className="w-6" />}
+                renderInput={(props) => (
+                  <input
+                    {...props}
+                    className="flex-1 min-w-[50px] h-[50px] border border-[#BFBFBF] rounded-xs text-center text-lg outline-none focus:border-[#E0935A]"
+                  />
+                )}
+              />
             </div>
 
             <div className="flex items-center justify-center">
@@ -46,11 +55,11 @@ export default function OtpPage() {
                 className={`${montserrat.className} font-normal text-[16.27px] leading-[100%] text-center`}
               >
                 If you don&apos;t receive the code?{" "}
-                <span className="text-[#E0935A] font-bold">00:30</span>
+                <span className="text-gold font-bold">00:30</span>
               </span>
             </div>
             <Button
-              className={`${montserrat.className} w-full sm:w-[457px] h-[50px] p-[15px] rounded-[2px] bg-[#E0935A] border-none text-amber-50 font-bold text-[16px] leading-[100%] tracking-[0.02em] text-center uppercase `}
+              className={`${montserrat.className} w-full sm:w-[457px] h-[50px] p-[15px] rounded-[2px] bg-gold border-none text-amber-50 font-bold text-[16px] leading-[100%] tracking-[0.02em] text-center uppercase `}
             >
               Verify CODE
             </Button>
@@ -60,7 +69,7 @@ export default function OtpPage() {
               >
                 Back to?
               </span>
-              <Link href="/login" className="text-[#E0935A]">
+              <Link href="/login" className="text-gold font-bold">
                 Login
               </Link>
             </div>

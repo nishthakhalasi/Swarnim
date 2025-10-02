@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -8,9 +10,9 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
-import Image from "next/image";
 import { Montserrat } from "next/font/google";
 import Link from "next/link";
+import PasswordInput from "@/components/ui/passwordInput";
 
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "500"] });
 
@@ -45,21 +47,7 @@ export default function LoginPage() {
               </div>
 
               <div className="relative  w-full sm:w-[457px]">
-                <Input
-                  id="password"
-                  type="password"
-                  placeholder="Password"
-                  required
-                  className={`${montserrat.className} w-full h-[52px] px-[18px] py-[14px] pr-10 font-normal text-[22px] sm:text-[24px] leading-[120%] border border-[#BFBFBF] rounded-[4px]`}
-                />
-
-                <Image
-                  src="/Eye.png"
-                  alt="Show password"
-                  width={25}
-                  height={25}
-                  className="absolute inset-y-0 right-3 my-auto cursor-pointer"
-                />
+                <PasswordInput placeholder="Password" />
               </div>
               <div className="flex flex-col sm:flex-row items-center w-full sm:w-[457px] justify-between mb-4 gap-2 sm:gap-0">
                 <div className="flex items-center gap-2">
@@ -84,7 +72,7 @@ export default function LoginPage() {
                 </Link>
               </div>
               <Button
-                className={`${montserrat.className} w-full sm:w-[457px] h-[50px] p-[15px] rounded-[2px] bg-[#E0935A] border-none text-amber-50 font-bold text-[16px] leading-[100%] tracking-[0.02em] text-center uppercase`}
+                className={`${montserrat.className} w-full sm:w-[457px] h-[50px] p-[15px] rounded-[2px] bg-gold border-none text-amber-50 font-bold text-[16px] leading-[100%] tracking-[0.02em] text-center uppercase`}
               >
                 LOGIN
               </Button>

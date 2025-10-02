@@ -6,10 +6,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import Image from "next/image";
 import { Montserrat } from "next/font/google";
 import Link from "next/link";
+import PasswordInput from "@/components/ui/passwordInput";
 
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "500"] });
 
@@ -34,38 +33,13 @@ export default function LoginPage() {
           <form>
             <div className="flex flex-col gap-6">
               <div className="relative w-[335px] sm:w-[335px] mx-auto">
-                <Input
-                  id="password"
-                  type="password"
-                  placeholder="New password"
-                  required
-                  className={`${montserrat.className} w-full h-[50px] px-[18px] py-[14px] pr-10 font-normal text-[22px] sm:text-[24px] leading-[120%] border border-[#BFBFBF] rounded-[4px]`}
-                />
-
-                <Image
-                  src="/Eye.png"
-                  alt="Show password"
-                  width={25}
-                  height={25}
-                  className="absolute inset-y-0 right-3 my-auto cursor-pointer"
-                />
+                <PasswordInput placeholder="New password" className="w-full" />
               </div>
 
               <div className="relative w-[335px] sm:w-[335px] mx-auto">
-                <Input
-                  id="password"
-                  type="password"
-                  placeholder="Re-enter new password "
-                  required
-                  className={`${montserrat.className} w-full h-[50px] px-[18px] py-[14px] pr-10 font-normal text-[22px] sm:text-[24px] leading-[120%] border border-[#BFBFBF] rounded-[4px]`}
-                />
-
-                <Image
-                  src="/Eye.png"
-                  alt="Show password"
-                  width={25}
-                  height={25}
-                  className="absolute inset-y-0 right-3 my-auto cursor-pointer"
+                <PasswordInput
+                  placeholder="Re-enter new password"
+                  className="w-full"
                 />
               </div>
             </div>
@@ -80,7 +54,7 @@ export default function LoginPage() {
             </div>
 
             <Button
-              className={`${montserrat.className} mb-5 w-full sm:w-[457px] h-[50px] p-[15px] rounded-[2px] bg-[#E0935A] border-none text-amber-50 font-bold text-[16px] leading-[100%] tracking-[0.02em] text-center uppercase`}
+              className={`${montserrat.className} mb-5 w-full sm:w-[457px] h-[50px] p-[15px] rounded-[2px] bg-gold border-none text-amber-50 font-bold text-[16px] leading-[100%] tracking-[0.02em] text-center uppercase`}
             >
               Reset Password
             </Button>
@@ -91,7 +65,7 @@ export default function LoginPage() {
               >
                 Back to?
               </span>
-              <Link href="/login" className="text-[#E0935A] font-bold">
+              <Link href="/login" className="text-gold font-bold">
                 Login
               </Link>
             </div>
