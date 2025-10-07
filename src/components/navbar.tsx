@@ -1,3 +1,5 @@
+"use client";
+
 import { Montserrat } from "next/font/google";
 import { Poppins } from "next/font/google";
 import Image from "next/image";

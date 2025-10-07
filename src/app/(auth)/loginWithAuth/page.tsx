@@ -15,7 +15,7 @@ import OTPInput from "react-otp-input";
 
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "500"] });
 
-export default function OtpPage() {
+export default function LoginWithAuth() {
   const [otp, setOtp] = useState("");
   return (
     <div className="flex items-center justify-center min-h-[90vh] px-4 ">

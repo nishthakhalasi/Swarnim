@@ -11,12 +11,16 @@ interface PasswordInputProps {
   id?: string;
   placeholder?: string;
   className?: string;
+  height?: string;
+  padding?: string;
 }
 
 export default function PasswordInput({
   id = "password",
   placeholder = "Password",
   className = "w-full sm:w-[457px]",
+  height = "h-[52px]",
+  padding = "px-[18px] py-[14px]",
 }: PasswordInputProps) {
   const [showPassword, setShowPassword] = useState(false);
 
@@ -27,7 +31,7 @@ export default function PasswordInput({
         type={showPassword ? "text" : "password"}
         placeholder={placeholder}
         required
-        className={`${montserrat.className} ${className} h-[52px] px-[18px] py-[14px] pr-10 font-normal text-[22px] sm:text-[24px] leading-[120%] border border-[#BFBFBF] rounded-[4px]`}
+        className={`${montserrat.className} ${className} ${height} ${padding} pr-10 font-normal text-[22px] sm:text-[24px] leading-[120%] border border-[#BFBFBF] rounded-[4px]`}
       />
 
       {showPassword ? (
