@@ -37,7 +37,7 @@ export default function AdminNavbar() {
       <div
         className={`${montserrat.className} flex items-center gap-[20px] text-[12px] font-semibold leading-[100%] text-center`}
       >
-        <Link href="#" className="hover:text-[#b97a2a]">
+        <Link href="/admin/dashboard" className="hover:text-[#b97a2a]">
           Dashboard
         </Link>
         <Link href="#" className="hover:text-[#b97a2a]">
@@ -65,11 +65,11 @@ export default function AdminNavbar() {
           </button>
 
           {dropdownOpen && (
-            <div className="absolute left-0 mt-5 bg-white border border-gray-200 shadow-md w-[202px] h-[93px] flex flex-col items-start py-[10px] px-[10px]">
+            <div className="absolute left-0 mt-5 bg-white border border-gray-200 shadow-md w-[202px] h-[93px] flex flex-col items-start py-[10px] px-[10px] z-[999]">
               <div className="absolute -top-2 left-2 w-3 h-3 bg-white border-t border-l border-gray-200 rotate-45"></div>
 
               <Link
-                href="#"
+                href="/admin/userManagement/userDetails"
                 className="w-full h-[35px] px-2 text-left text-gray-700 hover:bg-gray-100 border-b border-gray-200 flex items-center font-montserrat font-medium text-[12px] leading-[20px]"
               >
                 User & Roles
