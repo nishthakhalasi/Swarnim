@@ -2,13 +2,14 @@
 
 import React from "react";
 import AdminNavbar from "@/components/ui/adminNavbar";
+import AdminCard from "@/components/ui/adminCard";
 import Image from "next/image";
 
 export default function DashboardPage() {
   return (
-    <div className="flex flex-col min-h-screen bg-gray-100">
+    <div className="flex flex-col min-h-[90vh] bg-gray-100">
       <AdminNavbar />
-      <div className="absolute top-[68px] left-[20px] w-[1885px] h-[790px] bg-white shadow-lg  border border-gray-300 p-8 flex flex-col items-center justify-center ">
+      <AdminCard className="mt-7">
         <div className="relative w-full max-w-[421px] aspect-[421/267] mb-6">
           <Image
             src="/comingsoon.png"
@@ -26,7 +27,7 @@ export default function DashboardPage() {
           Heads up... Something exciting is on the way! We’re working hard
           behind the scenes. Stay tuned.
         </p>
-      </div>
+      </AdminCard>
     </div>
   );
 }

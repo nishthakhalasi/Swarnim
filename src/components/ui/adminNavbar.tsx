@@ -34,9 +34,8 @@ export default function AdminNavbar() {
         </span>
       </div>
 
-      <div
-        className={`${montserrat.className} flex items-center gap-[20px] text-[12px] font-semibold leading-[100%] text-center`}
-      >
+      {/* Menu */}
+      <div className="flex items-center gap-[20px] text-[12px] font-semibold leading-[100%] text-center">
         <Link href="/admin/dashboard" className="hover:text-[#b97a2a]">
           Dashboard
         </Link>
@@ -70,19 +69,19 @@ export default function AdminNavbar() {
 
               <Link
                 href="/admin/userManagement/userDetails"
-                className="w-full h-[35px] px-2 text-left text-gray-700 hover:bg-gray-100 border-b border-gray-200 flex items-center font-montserrat font-medium text-[12px] leading-[20px]"
+                className="w-full h-[35px] px-2 text-left text-gray-700 hover:bg-gray-100 border-b border-gray-200 flex items-center font-medium text-[12px] leading-[20px]"
               >
                 User & Roles
               </Link>
               <Link
                 href="#"
-                className="w-full h-[35px] px-2 text-left text-gray-700 hover:bg-gray-100 border-b border-gray-200 flex items-center font-montserrat font-medium text-[12px] leading-[20px]"
+                className="w-full h-[35px] px-2 text-left text-gray-700 hover:bg-gray-100 border-b border-gray-200 flex items-center font-medium text-[12px] leading-[20px]"
               >
                 Authenticator Setup
               </Link>
               <Link
                 href="#"
-                className="w-full h-[35px] px-2 text-left text-gray-700 hover:bg-gray-100 flex items-center font-montserrat font-medium text-[12px] leading-[20px]"
+                className="w-full h-[35px] px-2 text-left text-gray-700 hover:bg-gray-100 flex items-center font-medium text-[12px] leading-[20px]"
               >
                 SMTP Setup
               </Link>
@@ -95,6 +94,7 @@ export default function AdminNavbar() {
         </Link>
       </div>
 
+      {/* User */}
       <div className="flex items-center gap-2">
         <div className="w-8 h-8 rounded-full bg-gray-300 flex items-center justify-center">
           <Image
