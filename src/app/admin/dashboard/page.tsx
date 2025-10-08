@@ -9,8 +9,8 @@ export default function DashboardPage() {
   return (
     <div className="flex flex-col min-h-[90vh] bg-gray-100">
       <AdminNavbar />
-      <AdminCard className="mt-7">
-        <div className="relative w-full max-w-[421px] aspect-[421/267] mb-6">
+      <AdminCard className="mt-7 pt-40">
+        <div className="relative w-full max-w-[421px] aspect-[421/267] mb-6 ">
           <Image
             src="/comingsoon.png"
             alt="Illustration"
@@ -23,7 +23,7 @@ export default function DashboardPage() {
           Coming Soon
         </h1>
 
-        <p className="text-gray-600 text-[25px] font-light leading-[100%] text-center max-w-xl">
+        <p className="text-gray-600 text-[30px] font-light leading-[100%] text-center max-w-xl">
           Heads up... Something exciting is on the way! We’re working hard
           behind the scenes. Stay tuned.
         </p>
