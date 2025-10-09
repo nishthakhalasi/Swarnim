@@ -27,7 +27,9 @@ import {
   PaginationItem,
   PaginationLink,
   PaginationNext,
+  PaginationNextDouble,
   PaginationPrevious,
+  PaginationPreviousDouble,
 } from "@/components/ui/pagination";
 import { PiPencilSimpleLineFill } from "react-icons/pi";
 import { RiDeleteBin5Fill } from "react-icons/ri";
@@ -240,6 +242,7 @@ export default function DashboardPage() {
 
           <Pagination className="w-auto">
             <PaginationPrevious />
+            <PaginationPreviousDouble />
             <PaginationContent>
               {[1, 2, 3, 4, 5, "...", 10].map((num, i) => (
                 <PaginationItem key={i}>
@@ -251,6 +254,7 @@ export default function DashboardPage() {
                 </PaginationItem>
               ))}
             </PaginationContent>
+            <PaginationNextDouble />
             <PaginationNext />
           </Pagination>
         </div>

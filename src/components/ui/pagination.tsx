@@ -1,13 +1,12 @@
 "use client";
 
 import * as React from "react";
-import {
-  ChevronLeftIcon,
-  ChevronRightIcon,
-  MoreHorizontalIcon,
-} from "lucide-react";
+import { MoreHorizontalIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
+
+import { MdSkipNext, MdSkipPrevious } from "react-icons/md";
+import { FaFastBackward, FaFastForward } from "react-icons/fa";
 
 function Pagination({ className, ...props }: React.ComponentProps<"nav">) {
   return (
@@ -75,7 +74,7 @@ function PaginationPrevious({
       )}
       {...props}
     >
-      <ChevronLeftIcon size={16} />
+      <MdSkipPrevious size={18} />
     </PaginationLink>
   );
 }
@@ -92,7 +91,41 @@ function PaginationNext({
       )}
       {...props}
     >
-      <ChevronRightIcon size={16} />
+      <MdSkipNext size={18} />
+    </PaginationLink>
+  );
+}
+
+function PaginationPreviousDouble({
+  className,
+  ...props
+}: React.ComponentProps<typeof PaginationLink>) {
+  return (
+    <PaginationLink
+      className={cn(
+        "bg-[#EB8A3D] text-white hover:bg-[#d97a31] w-8 h-8",
+        className
+      )}
+      {...props}
+    >
+      <FaFastBackward size={12} />
+    </PaginationLink>
+  );
+}
+
+function PaginationNextDouble({
+  className,
+  ...props
+}: React.ComponentProps<typeof PaginationLink>) {
+  return (
+    <PaginationLink
+      className={cn(
+        "bg-[#EB8A3D] text-white hover:bg-[#d97a31] w-8 h-8",
+        className
+      )}
+      {...props}
+    >
+      <FaFastForward size={12} />
     </PaginationLink>
   );
 }
@@ -121,4 +154,6 @@ export {
   PaginationPrevious,
   PaginationNext,
   PaginationEllipsis,
+  PaginationPreviousDouble,
+  PaginationNextDouble,
 };
