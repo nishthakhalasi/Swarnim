@@ -19,3 +19,28 @@
 .text-gold {
   color: #e0935a;
 }
+
+@media (max-width: 640px) {
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+  thead {
+    display: none;
+  }
+  tr {
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 8px;
+  }
+  td {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 8px;
+  }
+}
