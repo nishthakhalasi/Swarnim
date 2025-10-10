@@ -13,6 +13,7 @@ export default function AdminCard({ children, className }: AdminCardProps) {
       <div
         className={`
           w-full
+          max-w-[1870px]
           flex flex-col 
           bg-white rounded shadow-md
           ${className || ""}
