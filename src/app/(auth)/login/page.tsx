@@ -19,7 +19,7 @@ const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "500"] });
 export default function LoginPage() {
   return (
     <div className="flex items-center justify-center min-h-[90vh] px-4 ">
-      <Card className="w-full max-w-[537px] h-auto p-5 gap-6 border border-[#BFBFBF] rounded-[10px] bg-white shadow-bottom-left sm:p-6 md:p-8">
+      <Card className="w-full max-w-[537px] h-auto p-5 gap-6 border border-whiteB rounded-[10px] bg-white shadow-bottom-left sm:p-6 md:p-8">
         <CardHeader className="items-center justify-center mt-[20px] mb-[20px]">
           <CardTitle
             className={`${montserrat.className} font-medium text-[32px] leading-[100%]  tracking-[0%] text-center`}
@@ -54,7 +54,7 @@ export default function LoginPage() {
                   <Checkbox
                     id="remember"
                     value="remember"
-                    className="w-[19.52px] h-[18.77px] border border-[#BFBFBF] rounded data-[state=checked]:bg-[#E0935A] data-[state=checked]:border-[#E0935A] data-[state=checked]:text-amber-50"
+                    className="w-[19.52px] h-[18.77px] border border-white rounded data-[state=checked]:bg-gold data-[state=checked]:border-gold data-[state=checked]:text-amber-50"
                   />
                   <label
                     htmlFor="remember"

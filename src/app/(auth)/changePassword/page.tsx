@@ -15,7 +15,7 @@ const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "500"] });
 export default function ChangePassword() {
   return (
     <div className="flex items-center justify-center min-h-[90vh] px-4 ">
-      <Card className="w-full max-w-[537px] h-auto p-5 gap-6 border border-[#BFBFBF] rounded-[10px] bg-white shadow-bottom-left sm:p-6 md:p-8">
+      <Card className="w-full max-w-[537px] h-auto p-5 gap-6 border border-whiteB rounded-[10px] bg-white shadow-bottom-left sm:p-6 md:p-8">
         <CardHeader className="items-center justify-center mt-[20px] mb-[20px]">
           <CardTitle
             className={`${montserrat.className} font-medium text-[32px] leading-[100%]  tracking-[0%] text-center`}

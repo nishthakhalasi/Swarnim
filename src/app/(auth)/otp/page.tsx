@@ -20,7 +20,7 @@ export default function OtpPage() {
 
   return (
     <div className="flex items-center justify-center min-h-[90vh] px-4">
-      <Card className="w-full max-w-[537px] h-auto p-5 gap-6 border border-[#BFBFBF] rounded-[10px] bg-white shadow-bottom-left sm:p-6 md:p-8">
+      <Card className="w-full max-w-[537px] h-auto p-5 gap-6 border border-whiteB rounded-[10px] bg-white shadow-bottom-left sm:p-6 md:p-8">
         <CardHeader className="items-center justify-center mt-[5px] mb-[5px]">
           <CardTitle
             className={`${montserrat.className} font-medium text-[32px] leading-[100%] text-center`}
@@ -47,7 +47,7 @@ export default function OtpPage() {
                 renderInput={(props) => (
                   <input
                     {...props}
-                    className="flex-1 min-w-[50px] h-[50px] border border-[#BFBFBF]  text-center text-lg outline-none focus:border-[#E0935A]"
+                    className="flex-1 min-w-[50px] h-[50px] border border-whiteB  text-center text-lg outline-none focus:border-[#E0935A]"
                   />
                 )}
               />

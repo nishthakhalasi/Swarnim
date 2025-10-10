@@ -1,133 +1,85 @@
 "use client";
 
-import * as React from "react";
-import { Montserrat } from "next/font/google";
-
+import React from "react";
 import { cn } from "@/lib/utils";
+import { Montserrat } from "next/font/google";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
 
-function Table({ className, ...props }: React.ComponentProps<"table">) {
+export function Table({ className, ...props }: React.ComponentProps<"table">) {
   return (
-    <div
-      data-slot="table-container"
-      className=" w-full whitespace-nowrap overflow-x-auto"
-    >
+    <div className="w-full overflow-x-auto border-t border-t-gray-300 ">
       <table
-        data-slot="table"
-        className={cn(
-          "w-full  min-w-[600px] border-collapse text-sm border-t border-b border-gray-300",
-          className
-        )}
+        className={cn(`${montserrat.className} w-full text-sm`, className)}
         {...props}
       />
     </div>
   );
 }
 
-function TableHeader({ className, ...props }: React.ComponentProps<"thead">) {
-  return (
-    <thead
-      data-slot="table-header"
-      className={cn(
-        "[&_tr]:border-b border-b-gray-300 font-bold",
-        montserrat.className,
-        className
-      )}
-      {...props}
-    />
-  );
-}
-
-function TableBody({ className, ...props }: React.ComponentProps<"tbody">) {
-  return (
-    <tbody
-      data-slot="table-body"
-      className={cn(
-        "[&_tr:last-child]:border-0",
-        montserrat.className,
-        className
-      )}
-      {...props}
-    />
-  );
-}
-
-function TableFooter({ className, ...props }: React.ComponentProps<"tfoot">) {
-  return (
-    <tfoot
-      data-slot="table-footer"
-      className={cn(
-        "bg-muted/50 border-t border-b-gray-300 font-medium [&>tr]:last:border-b-0",
-        className
-      )}
-      {...props}
-    />
-  );
-}
-
-function TableRow({ className, ...props }: React.ComponentProps<"tr">) {
-  return (
-    <tr
-      data-slot="table-row"
-      className={cn(
-        "hover:bg-muted/50 data-[state=selected]:bg-muted border-b border-b-gray-300 transition-colors",
-        className
-      )}
-      {...props}
-    />
-  );
-}
-
-function TableHead({ className, ...props }: React.ComponentProps<"th">) {
-  return (
-    <th
-      data-slot="table-head"
-      className={cn(
-        "text-foreground h-10 px-2 text-left align-middle font-medium whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
-        className
-      )}
-      {...props}
-    />
-  );
-}
-
-function TableCell({ className, ...props }: React.ComponentProps<"td">) {
-  return (
-    <td
-      data-slot="table-cell"
-      className={cn(
-        "p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
-        className
-      )}
-      {...props}
-    />
-  );
-}
-
-function TableCaption({
+export function TableHeader({
   className,
   ...props
-}: React.ComponentProps<"caption">) {
+}: React.ComponentProps<"thead">) {
   return (
-    <caption
-      data-slot="table-caption"
-      className={cn("text-muted-foreground mt-4 text-sm", className)}
+    <thead
+      className={cn(
+        `${montserrat.className} text-left uppercase tracking-[0.05em]`,
+        " text-[8px]  leading-[100%]",
+        className
+      )}
       {...props}
     />
   );
 }
 
-export {
-  Table,
-  TableHeader,
-  TableBody,
-  TableFooter,
-  TableHead,
-  TableRow,
-  TableCell,
-  TableCaption,
-};
+export function TableBody({
+  className,
+  ...props
+}: React.ComponentProps<"tbody">) {
+  return (
+    <tbody
+      className={cn(
+        "divide-y divide-gray-200 border-t border-t-gray-300 border-b border-b-gray-300",
+        className
+      )}
+      {...props}
+    />
+  );
+}
+
+export function TableRow({ className, ...props }: React.ComponentProps<"tr">) {
+  return (
+    <tr
+      className={cn(" hover:bg-gray-50 transition-colors", className)}
+      {...props}
+    />
+  );
+}
+
+export function TableHead({ className, ...props }: React.ComponentProps<"th">) {
+  return (
+    <th
+      className={cn(
+        `${montserrat.className} px-3 whitespace-nowrap  pb-2 uppercase font-bold text-[8px] leading-[100%] tracking-[0.05em]`,
+        className
+      )}
+      {...props}
+    />
+  );
+}
+
+export function TableCell({ className, ...props }: React.ComponentProps<"td">) {
+  return (
+    <td
+      className={cn(
+        "px-3 py-2 text-[12px] font-normal text-left uppercase leading-[100%] tracking-[0] whitespace-nowrap",
+        className
+      )}
+      {...props}
+    />
+  );
+}

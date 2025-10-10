@@ -1,46 +1,6 @@
 @import "tailwindcss";
 
-.shadow-bottom-left {
-  box-shadow: rgba(0, 0, 0, 0.25) -10px 30px 40px,
-    rgba(0, 0, 0, 0.12) -5px 10px 15px, rgba(0, 0, 0, 0.17) -2px 5px 10px;
-}
-
-.gold {
-  color: #e0935a;
-}
-.bg-gold {
-  background-color: #e0935a;
-}
-
-.border-gold {
-  border-color: #e0935a;
-}
-
-.text-gold {
-  color: #e0935a;
-}
-
-@media (max-width: 640px) {
-  table,
-  thead,
-  tbody,
-  th,
-  td,
-  tr {
-    display: block;
-  }
-  thead {
-    display: none;
-  }
-  tr {
-    margin-bottom: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 8px;
-  }
-  td {
-    display: flex;
-    justify-content: space-between;
-    padding: 6px 8px;
-  }
+@theme inline {
+  --color-gold: #e0935a;
+  --color-whiteB: #bfbfbf;
 }

@@ -7,23 +7,27 @@ import Image from "next/image";
 
 export default function DashboardPage() {
   return (
-    <div className="flex flex-col min-h-[90vh] bg-gray-100">
+    <div className="flex flex-col min-h-screen bg-gray-100">
       <AdminNavbar />
-      <AdminCard className="mt-7 pt-40">
-        <div className="relative w-full max-w-[421px] aspect-[421/267] mb-6 ">
+
+      <AdminCard className="pt-8 sm:pt-16 md:pt-28 lg:pt-34 pb-8 sm:pb-16 md:pb-28 lg:pb-34 px-4 sm:px-8 md:px-12 lg:px-16">
+        {/* Image Section */}
+        <div className="relative w-full max-w-[90%] sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto aspect-[421/267] mb-6">
           <Image
             src="/comingsoon.png"
             alt="Illustration"
             fill
-            className="object-cover"
+            className="object-contain"
           />
         </div>
 
-        <h1 className="text-[38px] font-bold leading-[100%] text-center text-[#4b2b19] mb-4">
+        {/* Heading */}
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-center text-[#4b2b19] mb-4">
           Coming Soon
         </h1>
 
-        <p className="text-gray-600 text-[30px] font-light leading-[100%] text-center max-w-xl">
+        {/* Paragraph */}
+        <p className="text-sm sm:text-base md:text-lg lg:text-xl font-light leading-relaxed text-center max-w-xl mx-auto px-2 sm:px-4">
           Heads up... Something exciting is on the way! We’re working hard
           behind the scenes. Stay tuned.
         </p>
