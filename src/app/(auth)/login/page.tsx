@@ -1,5 +1,8 @@
 "use client";
 
+import { useEffect, useState } from "react";
+import Loading from "@/components/loading";
+
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -8,7 +11,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
+import Input from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Montserrat } from "next/font/google";
 import Link from "next/link";
@@ -17,48 +20,61 @@ import PasswordInput from "@/components/ui/passwordInput";
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "500"] });
 
 export default function LoginPage() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <Loading />;
+  }
+
   return (
-    <div className="flex items-center justify-center min-h-[90vh] px-4 ">
-      <Card className="w-full max-w-[537px] h-auto p-5 gap-6 border border-whiteB rounded-[10px] bg-white shadow-bottom-left sm:p-6 md:p-8">
-        <CardHeader className="items-center justify-center mt-[20px] mb-[20px]">
+    <div className="flex items-center justify-center min-h-[90vh] px-4">
+      <Card className="w-full max-w-[537px] sm:max-w-[500px] md:max-w-[550px] lg:max-w-[600px] p-5 sm:p-6 md:p-8 gap-6 border border-whiteB rounded-[10px] bg-white shadow-bottom-left">
+        <CardHeader className="flex flex-col items-center justify-center pt-4">
           <CardTitle
-            className={`${montserrat.className} font-medium text-[32px] leading-[100%]  tracking-[0%] text-center`}
+            className={`${montserrat.className} font-medium text-[28px] sm:text-[30px] md:text-[32px] leading-[100%] tracking-[0%] text-center`}
           >
             Hi Welcome!
           </CardTitle>
 
           <CardDescription
-            className={`${montserrat.className} font-normal text-[12px] leading-[100%] tracking-[0%] text-center`}
+            className={`${montserrat.className} font-normal text-[12px] sm:text-[13px] md:text-[14px] leading-[100%] tracking-[0%] text-center`}
           >
             Login to manage your account
           </CardDescription>
         </CardHeader>
+
         <CardContent className="flex justify-center items-center">
-          <form>
-            <div className="flex flex-col gap-6">
-              <div className="grid gap-2">
+          <form className="w-full">
+            <div className="flex flex-col gap-6 w-full">
+              <div className="flex flex-col gap-4 w-full">
                 <Input
-                  id="email"
+                  id="Email"
                   type="email"
                   placeholder="User Name / Email ID"
-                  required
-                  className={` ${montserrat.className} w-full sm:w-[457px] h-[48.08px] px-[18px] py-[14px] gap-[10px]  font-normal text-[24px] leading-[100%] tracking-[0%] border border-[#BFBFBF] rounded-[2px] opacity-100 `}
+                  className="w-full"
+                />
+
+                <PasswordInput
+                  placeholder="Password"
+                  className={`${montserrat.className}w-full max-w-[490px] py-3 font-normal text-[16px] sm:text-[15px] md:text-[16px] placeholder:text-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold`}
                 />
               </div>
 
-              <div className="relative  w-full sm:w-[457px]">
-                <PasswordInput placeholder="Password" />
-              </div>
-              <div className="flex flex-col sm:flex-row items-center w-full sm:w-[457px] justify-between mb-4 gap-2 sm:gap-0">
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-0 w-full">
                 <div className="flex items-center gap-2">
                   <Checkbox
                     id="remember"
                     value="remember"
-                    className="w-[19.52px] h-[18.77px] border border-white rounded data-[state=checked]:bg-gold data-[state=checked]:border-gold data-[state=checked]:text-amber-50"
+                    className="w-[20px] h-[20px] border border-gray-400 rounded data-[state=checked]:bg-gold data-[state=checked]:border-gold data-[state=checked]:text-amber-50"
                   />
                   <label
                     htmlFor="remember"
-                    className={`${montserrat.className} font-normal text-[12px] leading-[100%] tracking-[0%] select-none`}
+                    className={`${montserrat.className} font-normal text-[12px] sm:text-[13px] md:text-[14px] leading-[100%] tracking-[0%] select-none`}
                   >
                     Remember me
                   </label>
@@ -66,13 +82,14 @@ export default function LoginPage() {
 
                 <Link
                   href="/otp"
-                  className={`${montserrat.className} font-bold text-[12px] leading-[100%] tracking-[0%] underline-offset-4 hover:underline`}
+                  className={`${montserrat.className} font-bold text-[12px] sm:text-[13px] md:text-[14px] leading-[100%] tracking-[0%] hover:text-gold`}
                 >
                   Forgot Password?
                 </Link>
               </div>
+
               <Button
-                className={`${montserrat.className} w-full sm:w-[457px] h-[50px] p-[15px] rounded-[2px] bg-gold border-none text-amber-50 font-bold text-[16px] leading-[100%] tracking-[0.02em] text-center uppercase`}
+                className={`${montserrat.className} w-full h-[50px] p-[15px] rounded-[4px] bg-gold border-none text-white font-bold text-[16px] sm:text-[15px] md:text-[16px] leading-[100%] tracking-[0.02em] text-center uppercase hover:bg-gold hover:text-white`}
               >
                 LOGIN
               </Button>

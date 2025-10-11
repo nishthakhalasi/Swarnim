@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -14,58 +16,60 @@ const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "500"] });
 
 export default function ChangePassword() {
   return (
-    <div className="flex items-center justify-center min-h-[90vh] px-4 ">
-      <Card className="w-full max-w-[537px] h-auto p-5 gap-6 border border-whiteB rounded-[10px] bg-white shadow-bottom-left sm:p-6 md:p-8">
-        <CardHeader className="items-center justify-center mt-[20px] mb-[20px]">
+    <div className="flex items-center justify-center min-h-[90vh] px-4 sm:px-6 md:px-8">
+      <Card className="w-full max-w-[537px] h-auto p-4 sm:p-6 md:p-8 gap-6 border border-whiteB rounded-[10px] bg-white shadow-bottom-left">
+        <CardHeader className="items-center justify-center  text-center">
           <CardTitle
-            className={`${montserrat.className} font-medium text-[32px] leading-[100%]  tracking-[0%] text-center`}
+            className={`${montserrat.className} font-medium text-[32px] leading-[100%] tracking-[0%] text-center`}
           >
             Change Passwords?
           </CardTitle>
 
           <CardDescription
-            className={`${montserrat.className} font-normal text-[12px] leading-[100%] tracking-[0%] text-center`}
+            className={`${montserrat.className} font-normal text-[12px] leading-[20px] tracking-[0%] text-center`}
           >
             Enter a new account password below to change your password.
           </CardDescription>
         </CardHeader>
+
         <CardContent className="flex justify-center items-center">
-          <form>
-            <div className="flex flex-col gap-6">
-              <div className="relative w-[335px] sm:w-[335px] mx-auto">
-                <PasswordInput placeholder="New password" className="w-full" />
-              </div>
-
-              <div className="relative w-[335px] sm:w-[335px] mx-auto">
-                <PasswordInput
-                  placeholder="Re-enter new password"
-                  className="w-full"
-                />
-              </div>
+          <form className="w-full  flex flex-col gap-4 sm:gap-6">
+            <div className="flex flex-col items-center gap-3 w-full">
+              <PasswordInput
+                className="w-full max-w-[340px] rounded-[2px]"
+                placeholder="New password"
+              />
+              <PasswordInput
+                className="w-full max-w-[340px] rounded-[2px]"
+                placeholder="Re-enter new password"
+              />
             </div>
 
-            <div className="flex items-center justify-center w-[335px] h-[28px] mx-auto mt-5 mb-5">
-              <span
-                className={`${montserrat.className} font-normal text-[11px] leading-[14px]  tracking-[0%] text-between`}
-              >
-                Password must be at least 8 characters with a mix of letters,
-                numbers, and symbols. (such as !, S., #, % more..).
-              </span>
-            </div>
+            <span
+              className={`${montserrat.className} pl-10 pr-7 font-normal text-[11px] leading-[20px] tracking-[0%]`}
+            >
+              Password must be at least 8 characters with a mix of letters,
+              numbers, and symbols. (such as !, @, #, % etc.)
+            </span>
 
+            {/* Reset Button */}
             <Button
-              className={`${montserrat.className} mb-5 w-full sm:w-[457px] h-[50px] p-[15px] rounded-[2px] bg-gold border-none text-amber-50 font-bold text-[16px] leading-[100%] tracking-[0.02em] text-center uppercase`}
+              className={`${montserrat.className}  w-full sm:w-[90%] md:w-[457px] h-[45px] sm:h-[50px] p-3 sm:p-[15px] rounded-[2px] bg-gold border-none text-amber-50 font-bold text-sm sm:text-[16px] uppercase mx-auto  hover:bg-gold hover:text-white`}
             >
               Reset Password
             </Button>
 
-            <div className="flex justify-center items-center gap-2 w-[335px] mx-auto">
+            {/* Back to Login */}
+            <div className="flex flex-wrap justify-center items-center gap-1 sm:gap-2 w-full px-2 sm:px-0">
               <span
-                className={`${montserrat.className} font-normal text-[16.27px] leading-[20px]`}
+                className={`${montserrat.className} font-normal text-sm sm:text-[16px] leading-[18px] text-center`}
               >
                 Back to?
               </span>
-              <Link href="/login" className="text-gold font-bold">
+              <Link
+                href="/login"
+                className="text-gold font-bold text-sm sm:text-[16px]"
+              >
                 Login
               </Link>
             </div>

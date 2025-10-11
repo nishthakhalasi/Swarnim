@@ -42,19 +42,13 @@ export default function ChangePassword() {
             <form className="flex flex-col items-center gap-4">
               <PasswordInput
                 placeholder="Existing Password"
-                height="h-[40px]"
-                padding="px-3 py-2"
                 className="w-[283px]  border border-gray-400 rounded-[2px] text-[14px] text-gray-800 placeholder:text-gray-500 focus:outline-none focus:border-gray-600 px-3 py-2"
               />
               <PasswordInput
                 placeholder="New Password"
-                height="h-[40px]"
-                padding="px-3 py-2"
                 className="w-[283px] h-[30px] border border-gray-400 rounded-[2px] text-[14px] focus:outline-none focus:border-gray-600 px-3 py-2"
               />
               <PasswordInput
-                height="h-[40px]"
-                padding="px-3 py-2"
                 placeholder="Confirm New Password"
                 className="w-[283px] h-[30px] border border-gray-400 rounded-[2px] text-[14px] focus:outline-none focus:border-gray-600 px-3 py-2"
               />

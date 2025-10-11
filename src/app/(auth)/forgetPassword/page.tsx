@@ -6,7 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
+import Input from "@/components/ui/input";
 
 import { Montserrat } from "next/font/google";
 import Link from "next/link";
@@ -16,16 +16,16 @@ const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "500"] });
 export default function ForgetPassword() {
   return (
     <div className="flex items-center justify-center min-h-[90vh] px-4 ">
-      <Card className="w-full max-w-[537px] h-auto p-5 gap-6 border border-white rounded-[10px] bg-white shadow-bottom-left sm:p-6 md:p-8">
-        <CardHeader className="items-center justify-center mt-[20px] mb-[20px]">
+      <Card className="w-full max-w-[537px] h-auto p-5 gap-6 border border-whiteB rounded-[10px] bg-white shadow-bottom-left sm:p-6 md:p-8">
+        <CardHeader className="items-center justify-center ">
           <CardTitle
-            className={`${montserrat.className} font-medium text-[32px] leading-[100%]  tracking-[0%] text-center mb-5`}
+            className={`${montserrat.className} font-medium text-[32px] leading-[100%]  tracking-[0%] text-center`}
           >
             Forgot Passwords?
           </CardTitle>
 
           <CardDescription
-            className={`${montserrat.className} font-normal text-[12px] leading-[100%] tracking-[0%] text-center`}
+            className={`${montserrat.className} font-normal text-[12px] leading-[20px] tracking-[0%] text-center`}
           >
             Forgot your password? No worries! Just set a new one below to get
             back into your dashboard.
@@ -39,12 +39,10 @@ export default function ForgetPassword() {
                   id="email"
                   type="email"
                   placeholder="User Name / Email ID"
-                  required
-                  className={`w-full sm:w-[457px] h-[48px] px-4 sm:px-[18px] py-[14px] font-normal text-[16px] leading-[100%] tracking-[0%] border border-whiteB rounded-[2px] mb-5`}
                 />
               </div>
             </div>
-            <Button className="w-full sm:w-[457px] h-[50px] p-[15px] rounded-[2px] bg-gold border-none text-amber-50 font-bold text-[16px] uppercase mb-5">
+            <Button className="w-full sm:w-[457px] h-[50px] p-[15px] rounded-[2px] bg-gold border-none text-amber-50 font-bold text-[16px] uppercase mt-3 mb-3  hover:bg-gold hover:text-white">
               Send Reset Code
             </Button>
 

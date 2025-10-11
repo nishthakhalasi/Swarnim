@@ -8,7 +8,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Input } from "@/components/ui/input";
+import Input from "@/components/ui/input";
 import {
   Table,
   TableBody,
@@ -141,6 +141,7 @@ export default function DashboardPage() {
 
                 <div className="relative w-full h-[35px]">
                   <Input
+                    id="fromDate"
                     type="text"
                     className={`w-full h-full ${montserrat.className} border border-gray-400 rounded-[2px] px-[10px] pr-[35px] py-[5px] text-[12px] font-medium capitalize placeholder:text-[12px] placeholder:font-medium placeholder:text-black`}
                     placeholder="From Date"
@@ -154,6 +155,7 @@ export default function DashboardPage() {
 
                 <div className="relative w-full h-[35px]">
                   <Input
+                    id="toDate"
                     type="text"
                     className={`w-full h-full ${montserrat.className} border border-gray-300 rounded-[2px] px-[10px] pr-[35px] py-[5px] text-[12px] font-medium capitalize placeholder:text-[12px] placeholder:font-medium placeholder:text-black`}
                     placeholder="To Date"
@@ -223,6 +225,8 @@ export default function DashboardPage() {
 
           <div className="relative w-[235px] h-[30px] border-l  border-gray-400">
             <Input
+              id="search"
+              type="search"
               placeholder="Search..."
               className={`${montserrat.className} w-full h-full border-none pr-8 text-[6px] placeholder:text-[12px] font-normal leading-[100%] tracking-[0%]`}
             />
@@ -315,8 +319,8 @@ export default function DashboardPage() {
 
                     <Label className="inline-flex items-center cursor-pointer">
                       <Input
+                        id="checkbox"
                         type="checkbox"
-                        value=""
                         className="sr-only peer"
                         defaultChecked={row.status === "Active"}
                       />

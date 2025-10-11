@@ -1,6 +1,8 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@theme inline {
-  --color-gold: #e0935a;
-  --color-whiteB: #bfbfbf;
+/* You can now safely apply your custom colors */
+body {
+  @apply bg-background text-textcolor;
 }
