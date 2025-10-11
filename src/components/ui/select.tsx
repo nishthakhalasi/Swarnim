@@ -2,10 +2,10 @@
 
 import * as React from "react";
 import * as SelectPrimitive from "@radix-ui/react-select";
-import { ChevronDownIcon, ChevronUpIcon } from "lucide-react";
+import { ChevronUpIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
-import Image from "next/image";
+import { FaCaretDown } from "react-icons/fa";
 
 function Select({
   ...props
@@ -46,7 +46,7 @@ function SelectTrigger({
       {children}
       <SelectPrimitive.Icon asChild>
         <span>
-          <Image src="/down.png" alt="arrow" width={15} height={15} />
+          <FaCaretDown size={20} />
         </span>
       </SelectPrimitive.Icon>
     </SelectPrimitive.Trigger>
@@ -170,7 +170,7 @@ function SelectScrollDownButton({
       )}
       {...props}
     >
-      <ChevronDownIcon className="size-4" />
+      <FaCaretDown className="size-4" />
     </SelectPrimitive.ScrollDownButton>
   );
 }

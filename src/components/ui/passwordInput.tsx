@@ -2,7 +2,8 @@
 
 import React, { useState } from "react";
 import Input from "@/components/ui/input";
-import { Eye, EyeOff } from "lucide-react";
+import { TbEyeFilled } from "react-icons/tb";
+import { IoEyeOff } from "react-icons/io5";
 
 interface PasswordInputProps {
   id?: string;
@@ -30,7 +31,7 @@ export default function PasswordInput({
         className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer text-gray-800"
         onClick={() => setShowPassword(!showPassword)}
       >
-        {showPassword ? <EyeOff size={22} /> : <Eye size={22} />}
+        {showPassword ? <IoEyeOff size={22} /> : <TbEyeFilled size={22} />}
       </div>
     </div>
   );

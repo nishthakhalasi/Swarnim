@@ -17,6 +17,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { BiSolidSearch } from "react-icons/bi";
 
 import { Button } from "@/components/ui/button";
 import AdminNavbar from "@/components/ui/adminNavbar";
@@ -34,9 +35,10 @@ import {
 import { PiCalendarDotsFill, PiPencilSimpleLineFill } from "react-icons/pi";
 import { RiDeleteBin5Fill } from "react-icons/ri";
 import { Montserrat } from "next/font/google";
-import Image from "next/image";
 import AdminCard from "@/components/ui/adminCard";
 import { Label } from "@/components/ui/label";
+import { FaFilter } from "react-icons/fa";
+import { MdOutlineRefresh } from "react-icons/md";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -80,17 +82,12 @@ export default function DashboardPage() {
                 onClick={() => setIsFilterOpen((prev) => !prev)}
                 className="w-[30px] h-[30px] border border-gray-300 rounded-[2px] flex items-center justify-center cursor-pointer hover:bg-gray-100 transition"
               >
-                <Image src="/filter.png" width={16} height={16} alt="Filter" />
+                <FaFilter size={18} />
               </div>
 
               {/* Refresh Button */}
               <div className="w-[30px] h-[30px] border border-gray-300 rounded-[2px] flex items-center justify-center cursor-pointer hover:bg-gray-100 transition">
-                <Image
-                  src="/refresh.png"
-                  width={16}
-                  height={16}
-                  alt="Refresh"
-                />
+                <MdOutlineRefresh size={20} />
               </div>
 
               <Button className="bg-[#F38E21] hover:bg-[#e07d10] text-white px-5 py-2 rounded">
@@ -191,10 +188,9 @@ export default function DashboardPage() {
         <div className="w-full h-[30px] flex justify-between items-center bg-gray-200 p-2 opacity-100 border-[2px] border-gray-300 ">
           <div className="flex items-center h-[30px]">
             <Select>
-              <SelectTrigger className="w-[79px] h-full px-[5px] border-r border-gray-400 focus:outline-none focus:ring-0  peer">
+              <SelectTrigger className="w-[79px] h-full px-[3px] border-r border-gray-400 focus:outline-none focus:ring-0  peer">
                 <SelectValue placeholder="10" />
               </SelectTrigger>
-
               <SelectContent>
                 <SelectItem value="10">10</SelectItem>
                 <SelectItem value="25">25</SelectItem>
@@ -223,21 +219,15 @@ export default function DashboardPage() {
             </Select>
           </div>
 
-          <div className="relative w-[235px] h-[30px] border-l  border-gray-400">
+          <div className="relative flex items-center w-[235px] h-[30px]">
+            <div className="w-[1px] bg-gray-400 h-8 ml-1"></div>
             <Input
               id="search"
               type="search"
               placeholder="Search..."
-              className={`${montserrat.className} w-full h-full border-none pr-8 text-[6px] placeholder:text-[12px] font-normal leading-[100%] tracking-[0%]`}
+              className={`${montserrat.className} flex-1 mt-2 h-full border-none pl-2 pr-8 text-[6px] placeholder:text-[12px] font-normal leading-[100%] tracking-[0%] bg-transparent`}
             />
-
-            <Image
-              src="/search.png"
-              alt="search"
-              width={15}
-              height={15}
-              className="absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none"
-            />
+            <BiSolidSearch size={15} />
           </div>
         </div>
 
@@ -311,7 +301,7 @@ export default function DashboardPage() {
                 </TableCell>
                 <TableCell className="flex justify-center items-center">
                   <div
-                    className={`flex items-center justify-between w-[90px] p-1 pl-2 pr-2 rounded-[2px] font-bold text-white ${
+                    className={`flex items-center min-w-[100px] p-1.5 rounded-[2px] font-bold text-white ${
                       row.status === "Active" ? "bg-[#5CAFA9]" : "bg-[#FF7685]"
                     }`}
                   >
@@ -326,7 +316,7 @@ export default function DashboardPage() {
                       />
 
                       <div
-                        className={`relative w-5 h-3 rounded-full peer bg-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:h-2 after:w-2 after:rounded-full after:transition-all after:bg-black peer-checked:after:bg-orange-300 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full`}
+                        className={`relative w-10 h-3 rounded-full peer bg-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:h-2 after:w-2 after:rounded-full after:transition-all after:bg-black peer-checked:after:bg-orange-300 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full`}
                       />
                     </Label>
                   </div>

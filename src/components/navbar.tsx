@@ -4,6 +4,7 @@ import { Montserrat } from "next/font/google";
 import { Poppins } from "next/font/google";
 import Image from "next/image";
 import Logo from "@/img/Logo.png";
+import { FaCircleQuestion } from "react-icons/fa6";
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["500"] });
 
@@ -25,13 +26,7 @@ export default function Navbar() {
       </div>
 
       <div className="flex w-[70px] h-[30px] items-center gap-2 border border-gray-300 rounded-[2px] px-2 py-[2px] cursor-pointer hover:border-[#E0935A]">
-        <Image
-          src="/Vector.png"
-          width={20}
-          height={20}
-          quality={100}
-          alt="icon"
-        />
+        <FaCircleQuestion size={25} color="#e0935a" />
         <span
           className={`${montserrat.className} text-gray-700 hover:text-[#E0935A] text-[10px] font-semibold leading-[100%]`}
         >

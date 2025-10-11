@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { Montserrat, Poppins } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
+import user1 from "@/img/user1.png";
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["500"] });
 const montserrat = Montserrat({
@@ -98,7 +99,7 @@ export default function AdminNavbar() {
       <div className="flex items-center gap-2">
         <div className="w-8 h-8 rounded-full bg-gray-300 flex items-center justify-center">
           <Image
-            src="/user1.png"
+            src={user1}
             alt="User"
             width={30}
             height={30}

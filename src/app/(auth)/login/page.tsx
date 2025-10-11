@@ -81,7 +81,7 @@ export default function LoginPage() {
                 </div>
 
                 <Link
-                  href="/otp"
+                  href="/forgetPassword"
                   className={`${montserrat.className} font-bold text-[12px] sm:text-[13px] md:text-[14px] leading-[100%] tracking-[0%] hover:text-gold`}
                 >
                   Forgot Password?

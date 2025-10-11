@@ -1,7 +1,7 @@
 import React from "react";
 import { Montserrat } from "next/font/google";
 import Image from "next/image";
-import LoadindImg from "@/img/Group 684.png";
+import LoadindImg from "@/img/Logo.png";
 
 const montserrat = Montserrat({
   subsets: ["latin"],

@@ -4,6 +4,7 @@ import React from "react";
 import AdminNavbar from "@/components/ui/adminNavbar";
 import AdminCard from "@/components/ui/adminCard";
 import Image from "next/image";
+import comingSoon from "@/img/comingSoon.png";
 
 export default function DashboardPage() {
   return (
@@ -14,8 +15,9 @@ export default function DashboardPage() {
         {/* Image Section */}
         <div className="relative w-full max-w-[90%] sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto aspect-[421/267] mb-6">
           <Image
-            src="/comingsoon.png"
+            src={comingSoon}
             alt="Illustration"
+            quality={100}
             fill
             className="object-contain"
           />
