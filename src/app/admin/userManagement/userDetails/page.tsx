@@ -20,7 +20,7 @@ import {
 import { BiSolidSearch } from "react-icons/bi";
 
 import { Button } from "@/components/ui/button";
-import AdminNavbar from "@/components/ui/adminNavbar";
+
 import {
   Pagination,
   PaginationContent,
@@ -60,8 +60,6 @@ export default function DashboardPage() {
 
   return (
     <div className="flex flex-col min-h-[90vh] bg-gray-100 overflow-hidden">
-      <AdminNavbar />
-
       <AdminCard>
         <div className="w-full">
           <div className="flex justify-between mb-4 w-full p-2.5">
