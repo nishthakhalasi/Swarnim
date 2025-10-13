@@ -2,9 +2,7 @@
 
 import * as React from "react";
 import { MoreHorizontalIcon } from "lucide-react";
-
 import { cn } from "@/lib/utils";
-
 import { MdSkipNext, MdSkipPrevious } from "react-icons/md";
 import { FaFastBackward, FaFastForward } from "react-icons/fa";
 
@@ -14,7 +12,10 @@ function Pagination({ className, ...props }: React.ComponentProps<"nav">) {
       role="navigation"
       aria-label="pagination"
       data-slot="pagination"
-      className={cn("flex items-center justify-end gap-2 p-3", className)}
+      className={cn(
+        "flex items-center justify-end gap-2 p-2 sm:p-3 overflow-x-auto",
+        className
+      )}
       {...props}
     />
   );
@@ -27,7 +28,10 @@ function PaginationContent({
   return (
     <ul
       data-slot="pagination-content"
-      className={cn("flex flex-row items-center gap-2 mx-auto", className)}
+      className={cn(
+        "flex flex-row items-center gap-1 sm:gap-2 mx-auto whitespace-nowrap",
+        className
+      )}
       {...props}
     />
   );
@@ -51,8 +55,8 @@ function PaginationLink({
     <button
       data-slot="pagination-link"
       className={cn(
-        "w-8 h-8 flex items-center justify-center rounded-sm font-medium transition-colors",
-        isActive ? "text-orange-500 " : "text-gray-800 hover:text-orange-500",
+        "w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center rounded-sm font-medium transition-colors text-sm sm:text-base",
+        isActive ? "text-orange-500" : "text-gray-800 hover:text-orange-500",
         className
       )}
       {...props}
@@ -68,10 +72,7 @@ function PaginationPrevious({
 }: React.ComponentProps<typeof PaginationLink>) {
   return (
     <PaginationLink
-      className={cn(
-        "bg-[#EB8A3D] text-white hover:bg-[#d97a31] w-8 h-8",
-        className
-      )}
+      className={cn("bg-[#EB8A3D] text-white hover:bg-[#d97a31]", className)}
       {...props}
     >
       <MdSkipPrevious size={18} />
@@ -85,10 +86,7 @@ function PaginationNext({
 }: React.ComponentProps<typeof PaginationLink>) {
   return (
     <PaginationLink
-      className={cn(
-        "bg-[#EB8A3D] text-white hover:bg-[#d97a31] w-8 h-8",
-        className
-      )}
+      className={cn("bg-[#EB8A3D] text-white hover:bg-[#d97a31]", className)}
       {...props}
     >
       <MdSkipNext size={18} />
@@ -102,10 +100,7 @@ function PaginationPreviousDouble({
 }: React.ComponentProps<typeof PaginationLink>) {
   return (
     <PaginationLink
-      className={cn(
-        "bg-[#EB8A3D] text-white hover:bg-[#d97a31] w-8 h-8",
-        className
-      )}
+      className={cn("bg-[#EB8A3D] text-white hover:bg-[#d97a31]", className)}
       {...props}
     >
       <FaFastBackward size={12} />
@@ -119,10 +114,7 @@ function PaginationNextDouble({
 }: React.ComponentProps<typeof PaginationLink>) {
   return (
     <PaginationLink
-      className={cn(
-        "bg-[#EB8A3D] text-white hover:bg-[#d97a31] w-8 h-8",
-        className
-      )}
+      className={cn("bg-[#EB8A3D] text-white hover:bg-[#d97a31]", className)}
       {...props}
     >
       <FaFastForward size={12} />
@@ -138,10 +130,13 @@ function PaginationEllipsis({
     <span
       aria-hidden
       data-slot="pagination-ellipsis"
-      className={cn("flex size-8 items-center justify-center", className)}
+      className={cn(
+        "flex w-6 h-6 sm:w-8 sm:h-8 items-center justify-center",
+        className
+      )}
       {...props}
     >
-      <MoreHorizontalIcon className="size-4 text-gray-600" />
+      <MoreHorizontalIcon className="w-4 h-4 text-gray-600" />
     </span>
   );
 }

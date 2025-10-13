@@ -9,7 +9,7 @@ interface AdminCardProps {
 
 export default function AdminCard({ children, className }: AdminCardProps) {
   return (
-    <div className="flex justify-center items-center w-full h-full bg-gray-100 p-2 sm:p-4 md:p-6 lg:p-8">
+    <div className="flex justify-center items-center w-full h-[100%] bg-gray-100 p-2 sm:p-4 md:p-6 lg:p-8">
       <div
         className={`
           w-full

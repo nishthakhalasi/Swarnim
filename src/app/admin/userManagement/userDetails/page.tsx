@@ -68,18 +68,21 @@ export default function DashboardPage() {
       <AdminCard>
         <div className="w-full">
           <div className="flex justify-between p-2.5">
-            <div>
-              <h2 className="text-lg font-bold text-gray-700">
+            <div className="flex flex-col sm:flex-col sm:items-center sm:gap-1">
+              <h2
+                className={`${montserrat.className} text-lg sm:text-xl font-bold text-gray-700`}
+              >
                 USER MANAGEMENT
               </h2>
               <p
-                className={`${montserrat.className} text-[10px] font-normal capitalize leading-[100%] tracking-[0%] text-gray-600`}
+                className={`${montserrat.className} text-[10px] sm:text-sm font-normal capitalize leading-[100%] tracking-[0%] text-gray-600 mt-1 sm:mt-0`}
               >
                 Dashboard / Settings / Users
               </p>
             </div>
 
-            <div className="flex gap-3 items-center">
+            <div className="flex flex-wrap sm:flex-nowrap gap-2 sm:gap-3 items-center">
+              {/* Filter Button */}
               <div
                 onClick={() => setIsFilterOpen((prev) => !prev)}
                 className="w-[30px] h-[30px] border border-gray-300 rounded-[2px] flex items-center justify-center cursor-pointer hover:bg-gray-100 transition"
@@ -92,7 +95,8 @@ export default function DashboardPage() {
                 <MdOutlineRefresh size={20} />
               </div>
 
-              <Button className="bg-[#F38E21] hover:bg-[#e07d10] text-white px-5 py-2 rounded">
+              {/* Add Button */}
+              <Button className="bg-[#F38E21] hover:bg-[#e07d10] text-white px-4 sm:px-5 py-2 rounded whitespace-nowrap">
                 ADD
               </Button>
             </div>
@@ -241,7 +245,6 @@ export default function DashboardPage() {
             </Select>
           </div>
 
-          {/* Right search */}
           <div className="relative flex items-center w-full sm:w-[235px] h-8 sm:mt-0 mt-2 border-l border-l-gray-400 rounded-sm">
             <Input
               id="search"
@@ -253,33 +256,51 @@ export default function DashboardPage() {
           </div>
         </div>
 
-        <div className="w-full mb-4 px-4">
+        <div className="w-full mb-4 px-2 sm:px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 pt-4">
+            {/* Total Users */}
             <div className="bg-[#528DEC] text-white w-full flex flex-col sm:flex-row justify-between items-start sm:items-center p-4 sm:p-5 rounded-sm">
-              <p className="text-lg sm:text-xl font-semibold">Total Users</p>
-              <h3 className="text-xl sm:text-2xl font-bold">150</h3>
+              <p className="text-base sm:text-lg md:text-xl font-semibold break-words">
+                Total Users
+              </p>
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold mt-2 sm:mt-0">
+                150
+              </h3>
             </div>
 
+            {/* Active Users */}
             <div className="bg-[#5CAFA9] text-white w-full flex flex-col sm:flex-row justify-between items-start sm:items-center p-4 sm:p-5 rounded-sm">
-              <p className="text-lg sm:text-xl font-semibold ">Active Users</p>
-              <h3 className="text-xl sm:text-2xl font-bold">120</h3>
+              <p className="text-base sm:text-lg md:text-xl font-semibold break-words">
+                Active Users
+              </p>
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold mt-2 sm:mt-0">
+                120
+              </h3>
             </div>
 
+            {/* Inactive Users */}
             <div className="bg-[#FF7685] text-white w-full flex flex-col sm:flex-row justify-between items-start sm:items-center p-4 sm:p-5 rounded-sm">
-              <p className="text-lg sm:text-xl font-semibold ">
+              <p className="text-base sm:text-lg md:text-xl font-semibold break-words">
                 Inactive Users
               </p>
-              <h3 className="text-xl sm:text-2xl font-bold">30</h3>
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold mt-2 sm:mt-0">
+                30
+              </h3>
             </div>
 
+            {/* Admin */}
             <div className="bg-[#E0935A] text-white w-full flex flex-col sm:flex-row justify-between items-start sm:items-center p-4 sm:p-5 rounded-sm">
-              <p className="text-lg sm:text-xl font-semibold">Admin</p>
-              <h3 className="text-xl sm:text-2xl font-bold">5</h3>
+              <p className="text-base sm:text-lg md:text-xl font-semibold break-words">
+                Admin
+              </p>
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold mt-2 sm:mt-0">
+                5
+              </h3>
             </div>
           </div>
         </div>
 
-        <Table className="w-full mt-4  min-w-full">
+        <Table className="w-full mt-4">
           <TableHeader>
             <TableRow>
               <TableHead className="font-bold text-xs text-center">
@@ -360,14 +381,14 @@ export default function DashboardPage() {
           </TableBody>
         </Table>
 
-        <div className="flex justify-between items-center mt-44 h-[50px] pl-4 w-full border-t border-t-gray-300 ">
+        <div className="flex justify-between items-center mt-18 sm:mt-28 md:mt-36 lg:mt-44 h-[auto] sm:h-[50px] pl-2 sm:pl-4 w-full border-t border-t-gray-300">
           <p
-            className={`${montserrat.className}font-normal text-[12px] leading-[17px] tracking-[0.02em] capitalize text-gray-600`}
+            className={`${montserrat.className} font-normal text-[10px] sm:text-[12px] md:text-[14px] lg:text-[16px] leading-[14px] sm:leading-[17px] md:leading-[19px] lg:leading-[21px] tracking-[0.02em] capitalize text-gray-600`}
           >
             Showing 1 To 9 Of 9 Entries
           </p>
 
-          <Pagination className="w-auto">
+          <Pagination>
             <PaginationPrevious />
             <PaginationPreviousDouble />
             <PaginationContent>
