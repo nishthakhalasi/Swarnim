@@ -21,7 +21,7 @@ export default function Loading() {
             src={LoadindImg}
             width={325}
             height={105}
-            quality={100}
+            // quality={100}
             alt="logo"
             className="w-full h-auto object-contain"
           />

@@ -22,7 +22,7 @@ export default function Footer() {
         src={footer}
         width={103.82}
         height={18.2}
-        quality={100}
+        // quality={100}
         alt="icon"
       />
     </footer>

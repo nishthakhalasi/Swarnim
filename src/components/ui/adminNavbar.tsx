@@ -25,7 +25,7 @@ export default function AdminNavbar() {
           src="/Logo.png"
           width={83}
           height={31}
-          quality={100}
+          // quality={100}
           alt="logo"
         />
         <span
