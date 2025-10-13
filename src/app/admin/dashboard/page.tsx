@@ -4,7 +4,7 @@ import React from "react";
 
 import AdminCard from "@/components/ui/adminCard";
 import Image from "next/image";
-import comingSoon from "@/img/comingSoon.png";
+import comingSoon from "@/img/comingsoon.png";
 
 export default function DashboardPage() {
   return (
