@@ -14,9 +14,11 @@ export default function DashboardPage() {
         <div className="relative w-full max-w-[90%] sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto aspect-[421/267] mb-6">
           <Image
             src={comingSoon}
+            width={0}
+            height={0}
             alt="Illustration"
-            quality={100}
-            fill
+            // quality={100}
+            // fill
             className="object-contain"
           />
         </div>
