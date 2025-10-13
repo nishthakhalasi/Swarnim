@@ -1,6 +1,6 @@
 import { Montserrat } from "next/font/google";
 import Image from "next/image";
-import footer from "@/img/footer .png";
+import footer from "@/img/footer.png";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -18,13 +18,7 @@ export default function Footer() {
         Copyright © 2025 Swarnim
       </span>
 
-      <Image
-        src={footer}
-        width={103.82}
-        height={18.2}
-        // quality={100}
-        alt="icon"
-      />
+      <Image src={footer} width={103.82} height={18.2} alt="icon" />
     </footer>
   );
 }

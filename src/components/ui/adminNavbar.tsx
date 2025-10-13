@@ -21,13 +21,7 @@ export default function AdminNavbar() {
     >
       {/* Logo */}
       <div className="relative flex items-center">
-        <Image
-          src="/Logo.png"
-          width={83}
-          height={31}
-          // quality={100}
-          alt="logo"
-        />
+        <Image src="/Logo.png" width={83} height={31} alt="logo" />
         <span
           className={`${poppins.className} absolute -top-1 left-[65px] w-[12px] h-[5px] font-medium text-[3.9px] leading-[110%] text-center uppercase text-amber-50 bg-black flex items-center justify-center rounded-[1px] px-[1px] py-[0.5px]`}
         >
