@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Swarnim",
   description: "GOLDSMITH'S GOLD",
   icons: {
-    icon: "./Logo.png",
+    icon: "/logo.png",
   },
 };
 
@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${outfit.className} bg-background overflow-hidden w-screen`}
+        className={`${outfit.className} bg-background  overflow-hidden w-screen h-[100dvh]`}
       >
         {children}
       </body>

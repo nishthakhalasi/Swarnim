@@ -32,7 +32,12 @@ import {
   PaginationPrevious,
   PaginationPreviousDouble,
 } from "@/components/ui/pagination";
-import { PiCalendarDotsFill, PiPencilSimpleLineFill } from "react-icons/pi";
+import {
+  PiCalendarDotsFill,
+  PiPencilSimpleLineFill,
+  PiSortAscendingFill,
+  PiSortDescendingFill,
+} from "react-icons/pi";
 import { RiDeleteBin5Fill } from "react-icons/ri";
 import { Montserrat } from "next/font/google";
 import AdminCard from "@/components/ui/adminCard";
@@ -59,10 +64,10 @@ export default function DashboardPage() {
   ];
 
   return (
-    <div className="flex flex-col min-h-[90vh] bg-gray-100 overflow-hidden">
+    <>
       <AdminCard>
         <div className="w-full">
-          <div className="flex justify-between mb-4 w-full p-2.5">
+          <div className="flex justify-between p-2.5">
             <div>
               <h2 className="text-lg font-bold text-gray-700">
                 USER MANAGEMENT
@@ -75,7 +80,6 @@ export default function DashboardPage() {
             </div>
 
             <div className="flex gap-3 items-center">
-              {/* Filter Button */}
               <div
                 onClick={() => setIsFilterOpen((prev) => !prev)}
                 className="w-[30px] h-[30px] border border-gray-300 rounded-[2px] flex items-center justify-center cursor-pointer hover:bg-gray-100 transition"
@@ -95,7 +99,7 @@ export default function DashboardPage() {
           </div>
 
           {isFilterOpen && (
-            <div className="w-full bg-white border-t border-t-gray-400 p-4 mb-1 animate-slideDown">
+            <div className="w-full bg-white border-t border-t-gray-400 p-4  animate-slideDown">
               <div className="grid grid-cols-4 gap-4">
                 <div className="relative w-full">
                   <Select>
@@ -183,10 +187,11 @@ export default function DashboardPage() {
           )}
         </div>
 
-        <div className="w-full h-[30px] flex justify-between items-center bg-gray-200 p-2 opacity-100 border-[2px] border-gray-300 ">
-          <div className="flex items-center h-[30px]">
+        <div className="w-full h-[30px] flex flex-col sm:flex-row sm:justify-between sm:items-center bg-gray-200 p-2 border-2 border-gray-300 gap-2">
+          {/* Left selects */}
+          <div className="flex flex-wrap sm:flex-nowrap items-center gap-2">
             <Select>
-              <SelectTrigger className="w-[79px] h-full px-[3px] border-r border-gray-400 focus:outline-none focus:ring-0  peer">
+              <SelectTrigger className="w-[70px] sm:w-[79px] h-8 px-2 border-r border-r-gray-400 rounded-sm focus:outline-none focus:ring-0">
                 <SelectValue placeholder="10" />
               </SelectTrigger>
               <SelectContent>
@@ -197,71 +202,84 @@ export default function DashboardPage() {
             </Select>
 
             <Select>
-              <SelectTrigger className="w-[136px] h-full px-[5px] border-r border-gray-400">
+              <SelectTrigger className="w-[100px] sm:w-[136px] h-8 px-2 border-r border-r-gray-400 rounded-sm">
                 <SelectValue placeholder="Export" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="CSV">CSV</SelectItem>
+                <SelectItem value="PDF">PDF</SelectItem>
                 <SelectItem value="Excel">Excel</SelectItem>
+                <SelectItem value="CSV">CSV</SelectItem>
               </SelectContent>
             </Select>
 
             <Select>
-              <SelectTrigger className="w-[136px] h-full px-[5px] border-r border-gray-400">
+              <SelectTrigger className="w-[140px] sm:w-[180px] h-8 px-2 border-r border-r-gray-400 rounded-sm">
                 <SelectValue placeholder="Sort by" />
               </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="Name">Name</SelectItem>
-                <SelectItem value="Status">Status</SelectItem>
+              <SelectContent className="min-w-[140px] sm:min-w-[160px]">
+                <SelectItem
+                  value="Ascending"
+                  className="!flex !items-center !gap-2 !whitespace-nowrap"
+                >
+                  <PiSortAscendingFill className="text-[16px] shrink-0" />
+                  <span className="flex items-baseline gap-1">
+                    <span className="font-semibold">Ascending</span>
+                    <span className="text-sm">A→Z</span>
+                  </span>
+                </SelectItem>
+                <SelectItem
+                  value="Descending"
+                  className="!flex !items-center !gap-2 !whitespace-nowrap"
+                >
+                  <PiSortDescendingFill className="text-[16px] shrink-0" />
+                  <span className="flex items-baseline gap-1">
+                    <span className="font-semibold">Descending</span>
+                    <span className="text-sm">Z→A</span>
+                  </span>
+                </SelectItem>
               </SelectContent>
             </Select>
           </div>
 
-          <div className="relative flex items-center w-[235px] h-[30px]">
-            <div className="w-[1px] bg-gray-400 h-8 ml-1"></div>
+          {/* Right search */}
+          <div className="relative flex items-center w-full sm:w-[235px] h-8 sm:mt-0 mt-2 border-l border-l-gray-400 rounded-sm">
             <Input
               id="search"
               type="search"
               placeholder="Search..."
-              className={`${montserrat.className} flex-1 mt-2 h-full border-none pl-2 pr-8 text-[6px] placeholder:text-[12px] font-normal leading-[100%] tracking-[0%] bg-transparent`}
+              className={`${montserrat.className} mt-2 flex-1 h-full border-none pl-2 pr-8 text-sm placeholder:text-sm font-normal bg-transparent`}
             />
-            <BiSolidSearch size={15} />
+            <BiSolidSearch size={18} className="absolute right-2" />
           </div>
         </div>
 
         <div className="w-full mb-4 px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 pt-4">
             <div className="bg-[#528DEC] text-white w-full flex flex-col sm:flex-row justify-between items-start sm:items-center p-4 sm:p-5 rounded-sm">
-              <p className="text-lg sm:text-xl font-semibold mb-2 sm:mb-0">
-                Total Users
-              </p>
+              <p className="text-lg sm:text-xl font-semibold">Total Users</p>
               <h3 className="text-xl sm:text-2xl font-bold">150</h3>
             </div>
 
             <div className="bg-[#5CAFA9] text-white w-full flex flex-col sm:flex-row justify-between items-start sm:items-center p-4 sm:p-5 rounded-sm">
-              <p className="text-lg sm:text-xl font-semibold mb-2 sm:mb-0">
-                Active Users
-              </p>
+              <p className="text-lg sm:text-xl font-semibold ">Active Users</p>
               <h3 className="text-xl sm:text-2xl font-bold">120</h3>
             </div>
 
             <div className="bg-[#FF7685] text-white w-full flex flex-col sm:flex-row justify-between items-start sm:items-center p-4 sm:p-5 rounded-sm">
-              <p className="text-lg sm:text-xl font-semibold mb-2 sm:mb-0">
+              <p className="text-lg sm:text-xl font-semibold ">
                 Inactive Users
               </p>
               <h3 className="text-xl sm:text-2xl font-bold">30</h3>
             </div>
 
             <div className="bg-[#E0935A] text-white w-full flex flex-col sm:flex-row justify-between items-start sm:items-center p-4 sm:p-5 rounded-sm">
-              <p className="text-lg sm:text-xl font-semibold mb-2 sm:mb-0">
-                Admin
-              </p>
+              <p className="text-lg sm:text-xl font-semibold">Admin</p>
               <h3 className="text-xl sm:text-2xl font-bold">5</h3>
             </div>
           </div>
         </div>
 
-        <Table className="w-full mt-4 mb-6 min-w-full">
+        <Table className="w-full mt-4  min-w-full">
           <TableHeader>
             <TableRow>
               <TableHead className="font-bold text-xs text-center">
@@ -299,7 +317,7 @@ export default function DashboardPage() {
                 </TableCell>
                 <TableCell className="flex justify-center items-center">
                   <div
-                    className={`flex items-center min-w-[100px] p-1.5 rounded-[2px] font-bold text-white ${
+                    className={`flex items-center w[50px] p-1.5 rounded-[2px] font-bold text-white ${
                       row.status === "Active" ? "bg-[#5CAFA9]" : "bg-[#FF7685]"
                     }`}
                   >
@@ -314,8 +332,14 @@ export default function DashboardPage() {
                       />
 
                       <div
-                        className={`relative w-10 h-3 rounded-full peer bg-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:h-2 after:w-2 after:rounded-full after:transition-all after:bg-black peer-checked:after:bg-orange-300 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full`}
-                      />
+                        className={`relative w-10 h-3 rounded-full peer bg-white
+    after:content-[''] after:absolute after:top-[2px] after:h-2 after:w-2 after:rounded-full after:transition-all
+    ${
+      row.status === "Active"
+        ? "after:bg-orange-300 after:right-[2px] after:left-auto"
+        : "after:bg-black after:left-[2px] after:right-auto"
+    }`}
+                      ></div>
                     </Label>
                   </div>
                 </TableCell>
@@ -362,6 +386,6 @@ export default function DashboardPage() {
           </Pagination>
         </div>
       </AdminCard>
-    </div>
+    </>
   );
 }

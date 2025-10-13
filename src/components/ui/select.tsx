@@ -121,7 +121,9 @@ function SelectItem({
       )}
       {...props}
     >
-      <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
+      <SelectPrimitive.ItemText asChild>
+        <span className="flex items-center gap-2">{children}</span>
+      </SelectPrimitive.ItemText>
     </SelectPrimitive.Item>
   );
 }

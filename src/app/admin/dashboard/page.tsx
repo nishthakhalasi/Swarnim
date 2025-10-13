@@ -8,10 +8,9 @@ import comingSoon from "@/img/comingsoon.png";
 
 export default function DashboardPage() {
   return (
-    <div className="flex flex-col min-h-screen bg-gray-100">
-      <AdminCard className="pt-8 sm:pt-16 md:pt-28 lg:pt-34 pb-8 sm:pb-16 md:pb-28 lg:pb-34 px-4 sm:px-8 md:px-12 lg:px-16">
-        {/* Image Section */}
-        <div className="relative w-full max-w-[90%] sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto aspect-[421/267] mb-6">
+    <>
+      <AdminCard>
+        <div className="relative sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto aspect-[421/267] mb-6 ">
           <Image
             src={comingSoon}
             width={0}
@@ -32,6 +31,6 @@ export default function DashboardPage() {
           behind the scenes. Stay tuned.
         </p>
       </AdminCard>
-    </div>
+    </>
   );
 }
