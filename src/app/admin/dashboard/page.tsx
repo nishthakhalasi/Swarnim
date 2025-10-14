@@ -9,8 +9,8 @@ import comingSoon from "@/img/comingsoon.png";
 export default function DashboardPage() {
   return (
     <>
-      <AdminCard>
-        <div className="relative sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto aspect-[421/267] mb-6 ">
+      <AdminCard className="justify-center items-center">
+        <div className="relative  sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto aspect-[421/267]  ">
           <Image
             src={comingSoon}
             width={0}

@@ -14,7 +14,6 @@ export default function Loading() {
       {/* Background Circle */}
       <div className="absolute w-[300vw] h-[300vw] max-w-[1384px] max-h-[1384px] bg-white rounded-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"></div>
 
-      {/* Logo */}
       <div className="relative flex flex-col items-center z-10">
         <div className="w-full max-w-[325px]">
           <Image
@@ -25,12 +24,6 @@ export default function Loading() {
             className="w-full h-auto object-contain"
           />
         </div>
-
-        <span
-          className={`${montserrat.className} text-gray-700 font-normal text-base sm:text-lg leading-[125%] tracking-widest uppercase mt-4 text-center`}
-        >
-          Goldsmith&apos;s Gold
-        </span>
       </div>
 
       {/* Footer */}

@@ -13,7 +13,7 @@ function Pagination({ className, ...props }: React.ComponentProps<"nav">) {
       aria-label="pagination"
       data-slot="pagination"
       className={cn(
-        "flex items-center justify-end gap-2 p-2 sm:p-3 overflow-x-auto",
+        "flex items-center justify-end gap-2 p-1 sm:p-2 overflow-x-auto",
         className
       )}
       {...props}

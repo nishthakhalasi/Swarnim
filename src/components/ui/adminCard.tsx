@@ -1,6 +1,7 @@
 "use client";
 
 import React, { ReactNode } from "react";
+import { Card } from "@/components/ui/card";
 
 interface AdminCardProps {
   children: ReactNode;
@@ -9,23 +10,23 @@ interface AdminCardProps {
 
 export default function AdminCard({ children, className }: AdminCardProps) {
   return (
-    <div className="flex justify-center items-center w-full h-[100%] bg-gray-100 p-2 sm:p-4 md:p-6 lg:p-8">
-      <div
+    <div className="flex justify-center w-full h-full bg-gray-100 p-2 sm:p-4 md:p-6 lg:p-8 overflow-y-auto">
+      <Card
         className={`
           w-full
-           h-full
           max-w-[1870px]
           flex flex-col
           bg-white 
           items-center 
-          justify-center
+          justify-start
           rounded
           shadow-md
+          overflow-hidden
           ${className || ""}
         `}
       >
         {children}
-      </div>
+      </Card>
     </div>
   );
 }
