@@ -68,14 +68,14 @@ export default function UserDetails() {
       <CardHeader className="flex flex-col sm:flex-row justify-between w-full p-0">
         <div className="flex flex-col sm:flex-col sm:items-start gap-1">
           <h2
-            className={`${montserrat.className} text-lg sm:text-xl md:text-2xl font-bold text-gray-700`}
+            className={`${montserrat.className} font-bold text-[16px] leading-[20px] tracking-[0px] uppercase text-gray-700`}
           >
             USER MANAGEMENT
           </h2>
           <p
-            className={`${montserrat.className} text-[10px] sm:text-sm font-normal capitalize leading-[100%] text-gray-600`}
+            className={`${montserrat.className} flex flex-row font-normal text-[12px] leading-[100%] tracking-[0px] capitalize text-gray-600`}
           >
-            Dashboard / Settings / Users
+            Dashboard / Settings / <span className="text-gold"> Users</span>
           </p>
         </div>
 

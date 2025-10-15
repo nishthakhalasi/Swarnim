@@ -19,8 +19,8 @@ export default function ChangePassword() {
     <>
       <AdminCard>
         <div className="fixed inset-0 flex items-center justify-center bg-black/75 z-50">
-          <div className="absolute justify-center items-center w-full max-w-[547px] h-[455px] bg-gray-200 rounded-none border-none"></div>
-          <Card className="relative w-full max-w-[507px] h-[360px] mt-2 p-5 gap-6 bg-white rounded-none border-none mb-14">
+          <div className="absolute justify-center items-center w-full max-w-[547px] h-[460px] bg-gray-200 rounded-none border-none"></div>
+          <Card className="relative w-full max-w-[507px] h-[360px] mt-2 p-5 gap-6 bg-white rounded-none border-none mb-16">
             <CardHeader className="flex flex-col items-center justify-center gap-2">
               <CardTitle
                 className={`${montserrat.className} font-medium text-[32px] text-center capitalize`}
