@@ -2,7 +2,6 @@
 
 import { Montserrat } from "next/font/google";
 import React from "react";
-
 import Input from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
@@ -16,7 +15,7 @@ interface AddEditUserProps {
   closeModal: () => void;
 }
 
-export default function AddEditUser({ isOpen, closeModal }: AddEditUserProps) {
+const AddEditUser: React.FC<AddEditUserProps> = ({ isOpen, closeModal }) => {
   if (!isOpen) return null;
 
   return (
@@ -29,8 +28,9 @@ export default function AddEditUser({ isOpen, closeModal }: AddEditUserProps) {
           className="absolute top-3 right-3 text-gray-500 hover:text-gray-800 font-bold text-xl"
           onClick={closeModal}
         >
-          x
+          ×
         </button>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div>
             <Input type="text" placeholder="Name" />
@@ -42,10 +42,10 @@ export default function AddEditUser({ isOpen, closeModal }: AddEditUserProps) {
             <Input type="email" placeholder="Email" />
           </div>
           <div>
-            <Input type="text" placeholder="Contact No(Primary)" />
+            <Input type="text" placeholder="Contact No (Primary)" />
           </div>
           <div>
-            <Input type="text" placeholder="Alternate Contact No(Optional)" />
+            <Input type="text" placeholder="Alternate Contact No (Optional)" />
           </div>
           <div className="sm:col-span-2">
             <textarea
@@ -60,13 +60,13 @@ export default function AddEditUser({ isOpen, closeModal }: AddEditUserProps) {
           <Button
             variant="outline"
             onClick={closeModal}
-            className={`w-full sm:w-auto border border-gold text-gold px-4 py-2 text-[12px] sm:text-[12px] font-bold uppercase text-center ${montserrat.className}`}
+            className={`w-full sm:w-auto border border-gold text-gold px-4 py-2 text-[12px] font-bold uppercase text-center ${montserrat.className}`}
           >
             CANCEL
           </Button>
 
           <Button
-            className={`w-full sm:w-auto bg-gold text-white hover:bg-[#e07d10] px-4 py-2 text-[12px] sm:text-[12px] font-bold uppercase text-center ${montserrat.className}`}
+            className={`w-full sm:w-auto bg-gold text-white hover:bg-[#e07d10] px-4 py-2 text-[12px] font-bold uppercase text-center ${montserrat.className}`}
           >
             SAVE & SEND CREDENTIALS
           </Button>
@@ -74,4 +74,6 @@ export default function AddEditUser({ isOpen, closeModal }: AddEditUserProps) {
       </div>
     </div>
   );
-}
+};
+
+export default AddEditUser;

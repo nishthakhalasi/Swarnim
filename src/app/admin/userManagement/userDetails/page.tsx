@@ -43,7 +43,7 @@ import { Label } from "@/components/ui/label";
 import { FaFilter } from "react-icons/fa";
 import { MdOutlineRefresh } from "react-icons/md";
 import { CardHeader, CardFooter, CardContent } from "@/components/ui/card";
-import AddEditUser from "../AddEditUser/page";
+import AddEditUser from "../AddEditUser/AddEditUser";
 const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
