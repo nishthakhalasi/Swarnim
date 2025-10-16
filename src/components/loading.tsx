@@ -12,7 +12,8 @@ export default function Loading() {
   return (
     <div className="fixed inset-0 flex flex-col items-center justify-center bg-gray-200 z-50 px-4">
       {/* Background Circle */}
-      <div className="absolute w-[300vw] h-[300vw] max-w-[1384px] max-h-[1384px] bg-white rounded-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"></div>
+      {/* <div className="absolute w-[300vw] h-[300vw] max-w-[1384px] max-h-[1384px] bg-white rounded-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"></div> */}
+      <div className="absolute w-[250vw] sm:w-[300vw] h-[250vw] sm:h-[300vw] max-w-[1384px] max-h-[1384px] bg-white rounded-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"></div>
 
       <div className="relative flex flex-col items-center z-10">
         <div className="w-full max-w-[325px]">
