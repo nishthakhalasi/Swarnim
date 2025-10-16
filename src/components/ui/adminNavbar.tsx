@@ -17,7 +17,10 @@ export default function AdminNavbar() {
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const closeMobileMenu = () => setMobileMenuOpen(false);
+  const handleMenuItemClick = () => {
+    setMobileMenuOpen(false);
+    setMobileDropdownOpen(false);
+  };
 
   return (
     <nav className={`w-full bg-white shadow-md ${montserrat.className}`}>
@@ -101,7 +104,6 @@ export default function AdminNavbar() {
             />
           </div>
 
-          {/* Mobile menu toggle */}
           <button
             className="md:hidden focus:outline-none"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -118,42 +120,42 @@ export default function AdminNavbar() {
         <div className="md:hidden bg-white border-t border-gray-200 shadow-md px-5 py-3 flex flex-col gap-2">
           <Link
             href="/admin/dashboard"
-            onClick={closeMobileMenu}
+            onClick={handleMenuItemClick}
             className="hover:text-[#b97a2a]"
           >
             Dashboard
           </Link>
           <Link
             href="#"
-            onClick={closeMobileMenu}
+            onClick={handleMenuItemClick}
             className="hover:text-[#b97a2a]"
           >
             Web Content
           </Link>
           <Link
             href="#"
-            onClick={closeMobileMenu}
+            onClick={handleMenuItemClick}
             className="hover:text-[#b97a2a]"
           >
             Customer
           </Link>
           <Link
             href="#"
-            onClick={closeMobileMenu}
+            onClick={handleMenuItemClick}
             className="hover:text-[#b97a2a]"
           >
             Packages
           </Link>
           <Link
             href="#"
-            onClick={closeMobileMenu}
+            onClick={handleMenuItemClick}
             className="hover:text-[#b97a2a]"
           >
             Addons
           </Link>
           <Link
             href="#"
-            onClick={closeMobileMenu}
+            onClick={handleMenuItemClick}
             className="hover:text-[#b97a2a]"
           >
             Reports
@@ -171,21 +173,21 @@ export default function AdminNavbar() {
               <div className="mt-2 bg-white border border-gray-200 shadow-md flex flex-col py-2">
                 <Link
                   href="/admin/userManagement/userDetails"
-                  onClick={() => setMobileDropdownOpen(false)}
+                  onClick={handleMenuItemClick}
                   className="px-2 py-1 text-gray-700 hover:bg-gray-100"
                 >
                   User & Roles
                 </Link>
                 <Link
                   href="/admin/settings/AuthenticatorSetup"
-                  onClick={() => setMobileDropdownOpen(false)}
+                  onClick={handleMenuItemClick}
                   className="px-2 py-1 text-gray-700 hover:bg-gray-100"
                 >
                   Authenticator Setup
                 </Link>
                 <Link
                   href="/admin/settings/EmailSMTP"
-                  onClick={() => setMobileDropdownOpen(false)}
+                  onClick={handleMenuItemClick}
                   className="px-2 py-1 text-gray-700 hover:bg-gray-100"
                 >
                   SMTP Setup
@@ -196,7 +198,7 @@ export default function AdminNavbar() {
 
           <Link
             href="#"
-            onClick={closeMobileMenu}
+            onClick={() => setMobileDropdownOpen(false)}
             className="hover:text-[#b97a2a]"
           >
             Ticket
