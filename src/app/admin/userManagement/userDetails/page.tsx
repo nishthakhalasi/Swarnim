@@ -169,8 +169,6 @@ export default function UserDetails() {
 
           <div className="flex justify-end gap-2 mt-3 sm:mt-4 flex-wrap">
             <Button
-              variant="outline"
-              size="sm"
               onClick={() => setIsFilterOpen(false)}
               className={`w-[70px] h-[40px] px-[20px] py-[11px] border border-gold rounded text-xs sm:text-[12px] font-bold uppercase text-gold ${montserrat.className}`}
             >
@@ -178,7 +176,6 @@ export default function UserDetails() {
             </Button>
 
             <Button
-              size="sm"
               className={`w-[70px] h-[40px] px-[20px] py-[11px] border border-gold rounded text-xs sm:text-[12px] font-bold uppercase bg-gold text-white ${montserrat.className}`}
             >
               Apply

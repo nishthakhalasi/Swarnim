@@ -207,8 +207,6 @@ export default function AuthenticatorSetup() {
                     </CardContent>
                     <div className="flex flex-col sm:flex-row justify-center items-center gap-3 w-full">
                       <Button
-                        variant="outline"
-                        size="sm"
                         onClick={() => {
                           setShowOtpModal(false);
                           setIsChecked(false);
@@ -219,7 +217,6 @@ export default function AuthenticatorSetup() {
                       </Button>
 
                       <Button
-                        size="sm"
                         className={`w-full sm:w-[270px] h-[40px] py-[11px] mt-2 border border-gold rounded text-xs sm:text-[12px] font-bold uppercase bg-gold text-white ${montserrat.className} hover:bg-[#d38b45] hover:text-white`}
                       >
                         SUBMIT

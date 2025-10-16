@@ -73,7 +73,7 @@ export default function AdminNavbar() {
                     Authenticator Setup
                   </Link>
                   <Link
-                    href="#"
+                    href="/admin/settings/EmailSMTP"
                     onClick={() => setDesktopDropdownOpen(false)}
                     className="w-full h-[35px] px-2 text-left text-gray-700 hover:bg-gray-100 flex items-center font-medium text-[12px] leading-[20px]"
                   >
@@ -184,7 +184,7 @@ export default function AdminNavbar() {
                   Authenticator Setup
                 </Link>
                 <Link
-                  href="#"
+                  href="/admin/settings/EmailSMTP"
                   onClick={() => setMobileDropdownOpen(false)}
                   className="px-2 py-1 text-gray-700 hover:bg-gray-100"
                 >

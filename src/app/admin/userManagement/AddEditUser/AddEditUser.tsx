@@ -58,7 +58,6 @@ const AddEditUser: React.FC<AddEditUserProps> = ({ isOpen, closeModal }) => {
 
         <div className="flex flex-col sm:flex-row justify-end gap-2 mt-4 w-full">
           <Button
-            variant="outline"
             onClick={closeModal}
             className={`w-full sm:w-auto border border-gold text-gold px-4 py-2 text-[12px] font-bold uppercase text-center ${montserrat.className}`}
           >

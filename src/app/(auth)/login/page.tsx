@@ -70,7 +70,7 @@ export default function LoginPage() {
                   <Checkbox
                     id="remember"
                     value="remember"
-                    className="w-[20px] h-[20px] border border-gray-400 rounded data-[state=checked]:bg-gold data-[state=checked]:border-gold data-[state=checked]:text-amber-50"
+                    className="w-[20px] h-[20px] border border-gray-400 rounded data-[state=checked]:bg-gold data-[state=checked]:border-gold data-[state=checked]:text-amber-50 flex justify-center items-center"
                   />
                   <label
                     htmlFor="remember"
