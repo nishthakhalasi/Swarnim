@@ -140,7 +140,7 @@ export default function AuthenticatorSetup() {
                 <div className="fixed inset-0 flex items-center justify-center bg-black/75 z-50 p-4 sm:p-6 overflow-auto">
                   <div className="absolute justify-center items-center w-full max-w-[600px] h-[620px] bg-gray-200 rounded-xl border-none"></div>
 
-                  <Card className="relative w-full max-w-[560px] h-[520px] bg-white border-none mb-16 rounded-xl mx-auto ">
+                  <Card className="relative w-full max-w-[560px] h-[520px] bg-white border-none mb-16 rounded-xl mx-auto shadow-none ">
                     <CardHeader className="items-center justify-center  text-center">
                       <CardTitle
                         className={`${montserrat.className} font-medium text-[32px] leading-[100%] tracking-normal text-center capitalize`}
